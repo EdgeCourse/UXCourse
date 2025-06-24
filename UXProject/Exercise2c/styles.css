@@ -1,0 +1,163 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url('https://fonts.gstatic.com/s/opensans/v34/mem8YaGs126MiZpBA-U1UpcaXcl0Aw.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  --primary-color: #0076ce;
+  --padding: 1rem;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'OpenSans', sans-serif;
+  padding: var(--padding);
+  background: #f9f9f9;
+  color: #111;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.2rem);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+.main-nav {
+  background: #eee;
+  padding: var(--padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.nav-list li:is(:first-child, :last-child) a {
+  font-weight: bold;
+}
+
+.nav-list li a[data-role="nav-link"] {
+  text-transform: uppercase;
+}
+
+.site-header {
+  text-align: center;
+  padding: 2rem 0;
+  background: var(--primary-color);
+  color: white;
+}
+
+.intro p::first-line {
+  font-weight: bold;
+  color: #333;
+}
+
+.flex-demo {
+  margin-top: 2rem;
+  background: #f0f0f0;
+  padding: var(--padding);
+}
+
+.flex-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.box {
+  flex: 1 1 200px;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+.box:nth-child(odd) {
+  background: #005ea1;
+}
+
+.box:not(:first-child) {
+  border: 2px dashed #fff;
+}
+
+.box:empty::before {
+  content: "This box is empty";
+  color: red;
+  font-style: italic;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  background: #0076ce;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+  }
+
+  body.menu-open .nav-list {
+    display: flex;
+  }
+}
+
+@supports (display: grid) {
+  .flex-demo {
+    border: 3px dashed green;
+  }
+}

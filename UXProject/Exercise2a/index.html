@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Web Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="main-nav" role="navigation" aria-label="Main navigation">
+    <button aria-label="Toggle navigation menu" class="nav-toggle" onclick="document.body.classList.toggle('menu-open')">☰ Menu</button>
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="site-header">
+    <h1>Responsive Web Lab</h1>
+  </header>
+
+  <main id="main" class="container">
+    <section class="intro">
+      <h2>Welcome</h2>
+      <p>This page demonstrates responsive techniques including flexible images, fluid grids, media queries, and user preference detection.</p>
+    </section>
+
+    <section class="grid card-container">
+      <article class="card">
+        <img src="images/bit-cloud-GlqbGLCPnQ4-unsplashlg.jpg" alt="Sample responsive" />
+        <p>This card scales on any screen.</p>
+      </article>
+      <article class="card">
+        <img src="images/bit-cloud-GlqbGLCPnQ4-unsplashlg.jpg" alt="Another example" />
+        <p>Try resizing the browser window.</p>
+      </article>
+      <article class="card">
+        <img src="images/bit-cloud-GlqbGLCPnQ4-unsplashlg.jpg" alt="Responsive image" />
+        <p>Images and layout adjust accordingly.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Responsive Design Lab</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+:root {
+  --primary-color: #0076ce;
+  --padding: 1rem;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  padding: var(--padding);
+  background: #f9f9f9;
+  color: #111;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+/* Accessibility: Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 0.5rem;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Navigation */
+.main-nav {
+  background: #eee;
+  padding: var(--padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+.nav-list li a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/* Header and Footer */
+.site-header {
+  text-align: center;
+  padding: 2rem 0;
+  background: var(--primary-color);
+  color: white;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Flexbox Demo Section */
+.flex-demo {
+  margin-top: 2rem;
+  background: #f0f0f0;
+  padding: var(--padding);
+}
+
+.flex-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.flex-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.box {
+  flex: 1 1 200px;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Progressive enhancement: Better colors for P3 displays */
+@media (color-gamut: p3) {
+  .box {
+    background-color: color(display-p3 0 0.5 1);
+  }
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+  }
+
+  body.menu-open .nav-list {
+    display: flex;
+  }
+}

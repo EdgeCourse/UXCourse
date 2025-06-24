@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Flexbox Demo with Progressive Enhancement</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="main-nav">
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="site-header">
+    <h1>Flexbox and Progressive Enhancement</h1>
+  </header>
+
+  <main id="main" class="container">
+    <section class="intro">
+      <h2>Welcome</h2>
+      <p>This site demonstrates a progressive enhancement approach to layout and styling using Flexbox and modern CSS features.</p>
+    </section>
+
+    <section class="flex-demo">
+      <h2>Flex Row Demo</h2>
+      <div class="flex-row">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+      </div>
+
+      <h2>Reverse and Wrap</h2>
+      <div class="flex-row reverse">
+        <div class="box">First</div>
+        <div class="box">Second</div>
+        <div class="box">Third</div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Responsive Design Lab</p>
+    </footer>
+  </main>
+</body>
+</html>
