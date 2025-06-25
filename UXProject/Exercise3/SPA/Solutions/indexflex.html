@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexbox SPA</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header, footer {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #444;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .section {
+      display: none;
+      padding: 2rem;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .box {
+      flex: 1 1 300px;
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 5px;
+      max-width: 400px;
+    }
+
+    .box img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    
+    @media (max-width: 600px) {
+      .box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My SPA with Flexbox</h1>
+    <p>Responsive + Single Page Application</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div id="home" class="section active">
+    <h2>Welcome Home</h2>
+    <p>This is the home section of the SPA.</p>
+  </div>
+
+  <div id="gallery" class="section">
+    <h2>Gallery</h2>
+    <div class="container">
+      <div class="box">
+        <img src="images/pexels-ahmetyuksek-32627855.jpg" alt="Image 1">
+        <p>Sample image description</p>
+      </div>
+      <div class="box">
+        <img src="images/charlesdeluvio-Lks7vei-eAg-unsplashlg.jpg" alt="Image 2">
+        <p>Another image here</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email us at example@example.com.</p>
+  </div>
+
+  <footer>
+    <p>&copy 2025 SPA Flexbox Website</p>
+  </footer>
+
+  <script>
+    function showSection(hash) {
+      document.querySelectorAll(".section").forEach((section) => {
+        section.classList.remove("active");
+      });
+
+      const target = document.querySelector(hash);
+      if (target) {
+        target.classList.add("active");
+      } else {
+        document.querySelector("#home").classList.add("active");
+      }
+    }
+
+    window.addEventListener("hashchange", () => {
+      showSection(location.hash);
+    });
+
+    // Default section
+    window.addEventListener("load", () => {
+      if (!location.hash) {
+        location.hash = "#home";
+      }
+      showSection(location.hash);
+    });
+  </script>
+</body>
+</html>
