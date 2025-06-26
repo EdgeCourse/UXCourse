@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Table</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h2>User Table (Responsive)</h2>
+
+  <!-- Scrollable Table Container -->
+  <div class="table-container">
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th class="col-role">Role</th>
+          <th class="col-status">Status</th>
+          <th class="col-joined">Joined</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jane Doe</td>
+          <td>jane@example.com</td>
+          <td class="col-role">Admin</td>
+          <td class="col-status">Active</td>
+          <td class="col-joined">2022-04-12</td>
+        </tr>
+        <tr>
+          <td>John Smith</td>
+          <td>john@example.com</td>
+          <td class="col-role">User</td>
+          <td class="col-status">Pending</td>
+          <td class="col-joined">2023-01-10</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Mobile Card Fallback (hidden on desktop) -->
+  <div class="mobile-cards">
+    <div class="data-card">
+      <p><strong>Name:</strong> Jane Doe</p>
+      <p><strong>Email:</strong> jane@example.com</p>
+      <details>
+        <summary>More Details</summary>
+        <p><strong>Role:</strong> Admin</p>
+        <p><strong>Status:</strong> Active</p>
+        <p><strong>Joined:</strong> 2022-04-12</p>
+      </details>
+    </div>
+
+    <div class="data-card">
+      <p><strong>Name:</strong> John Smith</p>
+      <p><strong>Email:</strong> john@example.com</p>
+      <details>
+        <summary>More Details</summary>
+        <p><strong>Role:</strong> User</p>
+        <p><strong>Status:</strong> Pending</p>
+        <p><strong>Joined:</strong> 2023-01-10</p>
+      </details>
+    </div>
+  </div>
+
+</body>
+</html>

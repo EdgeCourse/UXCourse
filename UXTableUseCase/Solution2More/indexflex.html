@@ -1,0 +1,46 @@
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<table class="responsive-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th class="hide-mobile">Role</th>
+      <th class="hide-mobile">Joined</th>
+      <th>More</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jane Doe</td>
+      <td>jane@example.com</td>
+      <td>Active</td>
+      <td class="hide-mobile">Admin</td>
+      <td class="hide-mobile">2022-04-12</td>
+      <td>
+        <button class="toggle-details" aria-expanded="false">+</button>
+      </td>
+    </tr>
+    <tr class="details-row" hidden>
+      <td colspan="6">
+        <strong>Role:</strong> Admin<br />
+        <strong>Joined:</strong> 2022-04-12
+      </td>
+    </tr>
+  </tbody>
+</table>
+<script>
+document.querySelectorAll('.toggle-details').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const detailsRow = btn.closest('tr').nextElementSibling;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    btn.textContent = expanded ? '+' : '–';
+    detailsRow.hidden = expanded;
+  });
+});
+</script>
+</html>
